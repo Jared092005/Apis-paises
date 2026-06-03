@@ -2,7 +2,7 @@ import { cambiarModo } from "./darkmode.js";
 
 async function capturarDatos() {
   try {
-    let respuesta = await fetch("../data.json");
+    let respuesta = await fetch("./public/data.json");
     let data = await respuesta.json();
     return data;
   } catch (error) {
