@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./scripts/main.js"></script>
+    <title>reto-paises</title>
+  </head>
+  <body>
+    <header
+      class="flex bg-white dark:bg-[#2c3743] dark:text-white py-6 px-4 justify-between md:px-12"
+    >
+      <h1 class="font-bold lg:text-xl">Where in the world?</h1>
+      <button
+        id="btn-dark"
+        class="active:scale-90 transition duration-150 cursor-pointer lg:text-lg"
+      >
+        🌙 Dark Mode
+      </button>
+    </header>
+    <main
+      class="bg-gray-100 dark:bg-[#212c36] w-full h-55 md:flex md:items-center"
+    >
+      <section
+        class="px-5 w-full pt-5 flex flex-col gap-8 md:flex-row md:justify-center md:items-center lg:justify-around lg:pt-8"
+      >
+        <input
+          type="text"
+          placeholder="🔍    Search for a country..."
+          class="outline-none px-7 py-5 w-80 bg-white dark:bg-[#2c3743] dark:text-white rounded-xl md:w-90 lg:w-[50%]"
+        />
+
+        <select
+          class="bg-white dark:bg-[#2c3743] dark:text-white h-15 decoration-none w-62.5 px-6 py-4 rounded-md md:w-60 lg:w-80"
+        >
+          <option value="">Filter by Region</option>
+          <option value="">Africa</option>
+          <option value="">America</option>
+          <option value="">Asia</option>
+          <option value="">Europe</option>
+          <option value="">Oceania</option>
+        </select>
+      </section>
+    </main>
+    <section
+      id="contenedor-paises"
+      class="grid grid-cols-1 px-10 bg-gray-100 dark:bg-[#212c36] gap-8 md:pl-20 md:grid-cols-2 lg:pl-15 lg:grid-cols-4 xl:grid-cols-5"
+    ></section>
+  </body>
+</html>
