@@ -19,7 +19,7 @@ let contenedorPaises = document.querySelector("#contenedor-paises");
 for (const pais of paises) {
   let cardGenerado = "";
   cardGenerado += ` <article
-        class="rounded-lg max-w-80 flex flex-col items-center justify-center bg-white dark:bg-[#2c3743] dark:text-white shadow-md md:max-w-65 transform transition-transform duration-200 ease-out active:scale-90 md:hover:scale-110"
+        class="rounded-lg max-w-80 flex flex-col items-center justify-center bg-white dark:bg-[#2c3743] dark:text-white shadow-md md:max-w-65 transform transition-transform duration-200 ease-out active:scale-90 touch-manipulation select-none md:hover:scale-110"
       ><div class="w-full h-[60%]">
        <img
           src="${pais.flags.svg}"
@@ -45,3 +45,5 @@ let parteDetallada = document.querySelector("#detailed-mode");
     cardGenerado = ``
 }
 } */
+
+let filtroPais = document.querySelector("#filtro-pais");
