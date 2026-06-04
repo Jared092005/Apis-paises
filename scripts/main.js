@@ -16,9 +16,11 @@ console.log(paises);
 
 let contenedorPaises = document.querySelector("#contenedor-paises");
 
-for (const pais of paises) {
-  let cardGenerado = "";
-  cardGenerado += ` <article
+function mostrarPaises(grupoDePaises) {
+  contenedorPaises.innerHTML = "";
+  for (const pais of grupoDePaises) {
+    let cardGenerado = "";
+    cardGenerado += ` <article
         class="rounded-lg max-w-80 flex flex-col items-center justify-center bg-white dark:bg-[#2c3743] dark:text-white shadow-md md:max-w-65 transform transition-transform duration-200 ease-out active:scale-90 touch-manipulation select-none md:hover:scale-110"
       ><div class="w-full h-[60%]">
        <img
@@ -34,16 +36,26 @@ for (const pais of paises) {
           <p>Capital: <span class="font-normal">${pais.capital}</span></p>
         </div>
       </article>`;
-  contenedorPaises.innerHTML += cardGenerado;
+    contenedorPaises.innerHTML += cardGenerado;
+  }
 }
 
-let parteDetallada = document.querySelector("#detailed-mode");
+mostrarPaises(paises);
 
-/* function abrirParteDetallada() {
-    for (const pais of paises) {
-    let cardGenerado = "";
-    cardGenerado = ``
+let seleccionarRegion = document.querySelector("#filtro-pais");
+
+function filtrarPaises() {
+  let regionSeleccionada = seleccionarRegion.value;
+
+  let paisesFiltrados = paises;
+
+  if (regionSeleccionada !== "Todas") {
+    paisesFiltrados = paisesFiltrados.filter(
+      (pais) => pais.region === regionSeleccionada,
+    );
+  }
+
+  mostrarPaises(paisesFiltrados);
 }
-} */
 
-let filtroPais = document.querySelector("#filtro-pais");
+seleccionarRegion.addEventListener("change", filtrarPaises);
