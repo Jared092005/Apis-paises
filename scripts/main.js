@@ -49,7 +49,7 @@ function filtrarPaises() {
 
   let paisesFiltrados = paises;
 
-  if (regionSeleccionada !== "Todas") {
+  if (regionSeleccionada !== "Filter by Region") {
     paisesFiltrados = paisesFiltrados.filter(
       (pais) => pais.region === regionSeleccionada,
     );
@@ -59,3 +59,20 @@ function filtrarPaises() {
 }
 
 seleccionarRegion.addEventListener("change", filtrarPaises);
+
+let buscadorDePaises = document.querySelector("#buscador-paises");
+
+function buscadorDePais() {
+  let nombre = buscadorDePaises.value.toLowerCase();
+
+  let nombreFiltrados = paises;
+
+  if (nombre !== "") {
+    nombreFiltrados = nombreFiltrados.filter((pais) => {
+      return pais.name.toLowerCase().includes(nombre);
+    });
+  }
+  mostrarPaises(nombreFiltrados);
+}
+
+buscadorDePaises.addEventListener("input", buscadorDePais);
